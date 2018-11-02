@@ -10,6 +10,8 @@ namespace hangmman_fst
     {
         static void Main(string[] args)
         {
+            draw_man hMan = new draw_man("", 0);
+            Console.ReadKey();
         }
     }
 }
