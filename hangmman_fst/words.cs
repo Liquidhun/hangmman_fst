@@ -10,17 +10,22 @@ namespace hangmman_fst
     class Words
     {
         public Words() { }
-
         static void readFile()
         {
-            using (StreamReader wordFile = new StreamReader("wordList.txt"))
+            string textFile = "wordList.txt";
+
+            if (File.Exists(textFile))
             {
-                while (!wordFile.EndOfStream)
+                using (StreamReader wordFile = new StreamReader(textFile))
                 {
-                    string line = wordFile.ReadLine();
-                    Console.WriteLine(line);
+                    while (!wordFile.EndOfStream)
+                    {
+                        string line = wordFile.ReadLine();
+                        Console.WriteLine(line);
+                    }
                 }
             }
+            
         }
         
     }
